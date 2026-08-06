@@ -74,6 +74,13 @@
     <div style="font-size: 18px; font-weight: bold; letter-spacing: 1px;">⚙️ 中亞鐵工廠 專案管理載入中...</div>
   </div>
   <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then(function(registrations) {
+        for (let registration of registrations) {
+          registration.update();
+        }
+      });
+    }
     // 在 flutter_bootstrap.js 後面加上時間戳記作為版本號，避免瀏覽器快取舊的引導腳本
     var script = document.createElement('script');
     script.src = "flutter_bootstrap.js?v=" + new Date().getTime();
