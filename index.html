@@ -36,8 +36,41 @@
 
   <title>中亞專案管理</title>
   <link rel="manifest" href="manifest.json">
+  <style>
+    body {
+      background-color: #1A252F;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    }
+    .loading-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #F1C40F;
+    }
+    .spinner {
+      width: 48px;
+      height: 48px;
+      border: 5px solid rgba(241, 196, 15, 0.2);
+      border-top: 5px solid #F1C40F;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin-bottom: 16px;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
 </head>
 <body>
+  <div class="loading-container">
+    <div class="spinner"></div>
+    <div style="font-size: 18px; font-weight: bold; letter-spacing: 1px;">⚙️ 中亞鐵工廠 專案管理載入中...</div>
+  </div>
   <script>
     // 在 flutter_bootstrap.js 後面加上時間戳記作為版本號，避免瀏覽器快取舊的引導腳本
     var script = document.createElement('script');
